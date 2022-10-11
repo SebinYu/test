@@ -14,6 +14,8 @@ import javax.persistence.Entity;
 @SpringBootApplication
 //@MapperScan(basePackages = {"net.skhu.service"})
 @ComponentScan(basePackages = {"net.skhu.controller"})
+@ComponentScan(basePackages = {"net.skhu.service"})
+
 
 
 public class TestApplication {
