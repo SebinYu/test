@@ -24,10 +24,18 @@ import java.util.List;
 public class StudygroupController {
 
     @Autowired StudygroupMapper studygroupMapper;
+
     @Autowired LearningMaterialMapper learningMaterialMapper;
 
     @Autowired ApplyMapper applyMapper;
 
+    @RequestMapping("home")
+    public String home(Model model,HttpSession session, HttpServletRequest request)throws Exception {
+        List<Studygroup> studygroups = studygroupMapper.findAll();
+        model.addAttribute("learningMaterials", learningMaterialMapper.findAll());
+        model.addAttribute("studygroups", studygroups);
+        return "studygroup/home";
+    }
 
     @RequestMapping("list")
     public String list(Model model,HttpSession session, HttpServletRequest request)throws Exception {

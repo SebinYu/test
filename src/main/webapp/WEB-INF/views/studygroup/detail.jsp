@@ -35,7 +35,7 @@
               <a href="edit?studyGroup_id=${ studygroup.studyGroup_id }">수정</a>
               <a href="delete?studyGroup_id=${ studygroup.studyGroup_id }">삭제</a>
       <hr><br>
-      <div class="content">${ studygroup.contents }</div>
+      <div class="content">${ studygroup.content }</div>
       <br><br>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

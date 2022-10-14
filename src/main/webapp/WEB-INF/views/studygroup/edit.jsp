@@ -94,13 +94,13 @@
             </tr>
             <tr>
                 <td>상세설명</td>
-                <td><input type="text" name="contents"
-                           value="${ studygroup.contents }" required/></td>
+                <td><input type="text" name="content"
+                           value="${ studygroup.content }" required/></td>
             </tr>
             <tr>
-                <td>스터디 리더 닉네임</td>
-                <td><input type="text" name="leader"
-                           value="${ studygroup.leader }" required/></td>
+                <td>조직장 이름</td>
+                <td><input type="text" name="writer"
+                           value="${ studygroup.writer }" required/></td>
             </tr>
             <tr>
                 <td>최대 모집인원</td>

@@ -1,6 +1,0 @@
-<mapper namespace="net.skhu.mappers.member">
-    <!-- 로그인 -->
-    <select id="signIn" resultType="city.turtle.mapper.MembersVO">
-        select * from members where mb_id = #{mb_id} and mb_pwd = #{mb_pwd}
-    </select>
-</mapper>

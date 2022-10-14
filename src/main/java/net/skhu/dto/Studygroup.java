@@ -8,9 +8,9 @@ import java.sql.Timestamp;
 public class Studygroup {
     BigInteger studyGroup_id;
     String title;
-    String contents;
+    String content;
     int learningMaterial_id;
-    String leader;
+    String writer;
     int totalNum;
     int currentNum;
     private Timestamp regDate;

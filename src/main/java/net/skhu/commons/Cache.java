@@ -1,22 +1,17 @@
-package net.skhu.entity;
+package net.skhu.commons;
 
-import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigInteger;
 
-@Data
 @Entity
-public class Students {
+@Getter
+public class Cache {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    BigInteger student_id;
-
-    String email;
-    String password;
-    String nickName;
-    String address;
+    private Integer cacheId;
+    private String using;
 }

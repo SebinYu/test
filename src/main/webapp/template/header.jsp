@@ -28,8 +28,8 @@
         <a class="navbar-brand" href="list"
            style="color: white; font-weight: bold; margin-left: 10px; font-size: 30px">Coding Study Friends</a>
         <div class="buttons" style="padding:10px">
-            <a href="login" class="btn btn-secondary">로그인</a>
-            <a href="signIn" class="btn btn-primary"  style="margin-right:15px;">회원가입</a>
+            <a href="/user/login" class="btn btn-secondary">로그인</a>
+            <a href="/user/register" class="btn btn-primary"  style="margin-right:15px;">회원가입</a>
             <button class="navbar-toggler" type="button" style="float: right;"
                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
