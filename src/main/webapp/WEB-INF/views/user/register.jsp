@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/static/css/user/register.css"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<jsp:include page="/template/header.jsp"></jsp:include>
 <div class="login-box">
     <h2>회원가입</h2>
     <form method="post" id="frm">

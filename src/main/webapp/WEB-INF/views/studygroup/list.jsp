@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
             rel="stylesheet">
@@ -38,15 +38,23 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <%--배너 이미지 및 버튼--%>
-<div class="banner">
+<div class="banner" style="	height: 50vh;
+	width: 100vw;
+	text-align: center;
+
+	/* background:black; */
+	background-image: url('../imgs/bannerImg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;">
     <br><br><br><br><br><br><br><br>
 
-    <a href="create" class="btn btn-info" style="margin-top: 250px">스터디 만들기</a>
+    <a href="create" class="btn btn-info" style="margin-top: 250px; color: white;">스터디 만들기</a>
+
 </div>
 
 
 <%--스터디 종류 리스트--%>
-<div class="container" style="background: #0B4C5F">
+<div class="container" >
     <form method="get" action="#" class="form-inline mt-3">
         <select class="dropdown mx-1 mt-2" name="learningMaterial_id"
                 style="width: 120px">
@@ -56,20 +64,21 @@
                         ${ d.materialType }</option>
             </c:forEach>
         </select>
-        <input type="text" name="search" class="form-control mx-1 mt-2" style="width: 200px" placeholder="내용을 입력하세요">
-        <button type="submit" class="btn btn-primary mx-1 mt-2">검색</button>
+        <input type="text" name="search" class="form-control mx-1 mt-2" style="width: 200px" placeholder="내용을 입력하세요"/>
+        <button type="submit" class="btn btn-primary btn-default mx-1 mt-2">검색</button>
     </form>
 </div>
 
 <%--스터디 리스트 조회--%>
-<div class="list">
+<div class="list" style="margin-left: 50px">
+
     <c:forEach var="studygroup" items="${ studygroups }">
         <div class="" style="display: inline-block; margin: 20px;">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title" style="color: black">
                         <a href="detail?studyGroup_id=${ studygroup.studyGroup_id }"
-                           style="color: #0B4C5F">${ studygroup.title }</a>
+                           style="color: rgba(0,0,0,0.57);text-decoration: none; font-weight: bold;">${ studygroup.title }</a>
                     </h5>
                     <p class="card-text">
                         BY. ${ studygroup.writer }<br> 정원. ${ studygroup.currentNum }/${ studygroup.totalNum }

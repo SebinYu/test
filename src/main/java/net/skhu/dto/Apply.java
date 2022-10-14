@@ -6,7 +6,8 @@ import java.math.BigInteger;
 @Data
 public class Apply {
     BigInteger apply_id;
-    String studentId;
+    String userId;
     String studygroupId;
     String application;
+    String name;
 }

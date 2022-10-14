@@ -25,7 +25,7 @@
 <body>
 <nav class="navbar bg-info fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="list"
+        <a class="navbar-brand" href="/studygroup/list"
            style="color: white; font-weight: bold; margin-left: 10px; font-size: 30px">Coding Study Friends</a>
         <div class="buttons" style="padding:10px">
             <a href="/user/login" class="btn btn-secondary">로그인</a>
@@ -36,7 +36,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-
         <div class="offcanvas offcanvas-end bg-info" style="color: white;"
              tabindex="-1" id="offcanvasNavbar"
              aria-labelledby="offcanvasNavbarLabel">
@@ -73,6 +72,7 @@
         </div>
     </div>
 </nav>
+<div style="clear:both"></div>
 
 
 </body>

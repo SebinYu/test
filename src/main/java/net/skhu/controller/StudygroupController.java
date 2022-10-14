@@ -27,7 +27,8 @@ public class StudygroupController {
 
     @Autowired LearningMaterialMapper learningMaterialMapper;
 
-    @Autowired ApplyMapper applyMapper;
+    @Autowired
+    ApplyMapper applyMapper;
 
     @RequestMapping("home")
     public String home(Model model,HttpSession session, HttpServletRequest request)throws Exception {
@@ -78,20 +79,32 @@ public class StudygroupController {
 
 
     @GetMapping("detail")
-    public String detail(Model model,@RequestParam("studyGroup_id") BigInteger studyGroup_id, Apply applyTable) {
+    public String detail(Model model,
+                         @RequestParam("studyGroup_id") BigInteger studyGroup_id) {
         List<Studygroup> studygroups = studygroupMapper.findAll();
         model.addAttribute("studygroups", studygroups);
         Studygroup studygroup = studygroupMapper.findOne(studyGroup_id);
         model.addAttribute("studygroup", studygroup);
         model.addAttribute("learningMaterials", learningMaterialMapper.findAll());
 
-        List<Apply> applies = applyMapper.findAll();
-        model.addAttribute("applies", applies);
-        Apply apply = applyMapper.findOne(studyGroup_id);
-        applyMapper.update(applyTable);
+
+        List<Apply> applys = applyMapper.findAll();
+        model.addAttribute("applys", applys);
+        List<Apply> applyList = applyMapper.findApplyList(studyGroup_id);
+        model.addAttribute("applyList", applyList);
+
+
         return "studygroup/detail";
+    }
 
 
+
+    @PostMapping("detail")
+    public String edit(Model model, Apply apply) {
+        applyMapper.insert(apply);
+        model.addAttribute("applys", applyMapper.findAll());
+
+        return "studygroup/appliedMember";
     }
 
 
@@ -101,11 +114,7 @@ public class StudygroupController {
         return "redirect:list";
     }
 
-//    @DeleteMapping("/{studyGroup_id}")
-//    public String delete(@PathVariable("studyGroup_id") BigInteger studyGroup_id) {
-//        studygroupMapper.delete(studyGroup_id);
-//        return "redirect:list";
-//    }
+
 
 
 }

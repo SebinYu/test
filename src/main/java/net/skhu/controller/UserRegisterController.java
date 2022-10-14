@@ -40,10 +40,13 @@ public class UserRegisterController {
         userService.register(userVO);
         redirectAttributes.addFlashAttribute("msg", "REGISTERED");
 
-        return "redirect:/user/login";
+        return "redirect:/studygroup/list";
     }
 
 
-
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginGET() throws Exception {
+        return "studygroup/list";
+    }
 
 }
